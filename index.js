@@ -138,9 +138,9 @@ setTimeout(() => {
   }
 }, 5 * 1000 * 60);
 
-client.login(config.token || process.env.token).then((bot)=>{
+client.login(process.env.token).then((bot)=>{
 
-const rest = new REST({ version: '9' }).setToken(config.token || process.env.token);
+const rest = new REST({ version: '9' }).setToken(process.env.token);
 rest.put(
   Routes.applicationGuildCommands(config.clientID, config.guildID),
   { body: commands },
